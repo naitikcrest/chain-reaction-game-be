@@ -104,7 +104,7 @@ io.on("connection", (socket) => {
     if (!room) return cb({ ok: false, reason: "Room not found." });
     const playerId = room.socketToPlayer.get(socket.id);
     if (!playerId) return cb({ ok: false, reason: "Not joined." });
-    const player = room.state.players.find((p) => p.id === playerId);
+    const player = room.state.players.find((p: { id: string }) => p.id === playerId);
     if (!player) return cb({ ok: false, reason: "Player not found." });
 
     const msg = payload.message?.trim();

@@ -1,4 +1,4 @@
-import type { GameEvent, GameState, PlayerId } from "@chain-reaction/shared";
+import type { GameEvent, GameState, PlayerId } from "./shared/types.js";
 
 export type RoomId = string;
 

@@ -1,4 +1,4 @@
-import { applyMove, createEmptyGrid, resetGame, type GameState, type Player } from "@chain-reaction/shared";
+import { applyMove, createEmptyGrid, resetGame, type GameState, type Player } from "./shared/index.js";
 import { nanoid } from "nanoid";
 import type { Room } from "./types.js";
 
@@ -85,7 +85,7 @@ export class RoomStore {
   }
 
   leaveByPlayerId(room: Room, playerId: string): void {
-    const p = room.state.players.find((x) => x.id === playerId);
+    const p = room.state.players.find((x: { id: string }) => x.id === playerId);
     if (!p) return;
     p.eliminated = true;
     room.state.updatedAt = Date.now();
