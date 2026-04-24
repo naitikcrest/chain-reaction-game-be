@@ -11,7 +11,6 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@chain-reaction/shared": "*",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "nanoid": "^5.0.7",
